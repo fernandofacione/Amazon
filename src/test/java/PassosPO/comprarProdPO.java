@@ -62,9 +62,9 @@ public class comprarProdPO {
         System.out.println("Passo 3");
     }
 
-    @Entao("^vejo a lista de resultados para o curso \"([^\"]*)\" PO$")
+    @Entao("^vejo a lista de resultados para o produto \"([^\"]*)\" PO$")
     public void vejoAListaDeResultadosParaOProdutoPO(String produto) {
-        String textoEsperado = "Produtos › \"" + produto + "\"";
+        String textoEsperado = "rodutos › \"" + produto + "\"";
         wait.until(ExpectedConditions.textToBe(resultado.verificarElemento(),textoEsperado));
         assertEquals(resultado.lerIndicadorDeProduto(), textoEsperado);
         System.out.println("Passo 4");
@@ -82,7 +82,7 @@ public class comprarProdPO {
         System.out.println("Passo 6");
     }
 
-    @Entao("^confirmo o nome do curso como \"([^\"]*)\" e o preco de \"([^\"]*)\" PO$")
+    @Entao("^confirmo o nome do produto como \"([^\"]*)\" e o preco de \"([^\"]*)\" PO$")
     public void confirmoONomeDoProdutoComoEOPrecoDePO(String arg0, String arg1)  {
         System.out.println("Passo 7");
     }

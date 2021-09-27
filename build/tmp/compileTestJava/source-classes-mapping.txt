@@ -1,28 +1,16 @@
-webTests/comprarCursoCS.java
- webTests.comprarCursoCS
-webTests/seleniumSimples.java
- webTests.seleniumSimples
-apiTests/User.java
- apiTests.User
-pages/Carrinho.java
- pages.Carrinho
-pages/Home.java
- pages.Home
-stepsPO/Runner.java
- stepsPO.Runner
-unitTests/TestaCalc.java
- unitTests.TestaCalc
-stepsPO/comprarCursoPO.java
- stepsPO.comprarCursoPO
 utils/Evidencias.java
  utils.Evidencias
-pages/Resultado.java
- pages.Resultado
-apiTests/Pet.java
- apiTests.Pet
 utils/Logs.java
  utils.Logs
-stepsPO/Hooks.java
- stepsPO.Hooks
-webTests/seleniumIDE.java
- webTests.seleniumIDE
+PassosPO/Runner.java
+ PassosPO.Runner
+PassosPO/Hooks.java
+ PassosPO.Hooks
+pages/Resultado.java
+ pages.Resultado
+pages/Home.java
+ pages.Home
+PassosPO/comprarProdPO.java
+ PassosPO.comprarProdPO
+webTests/CompraAmazon.java
+ webTests.CompraAmazon

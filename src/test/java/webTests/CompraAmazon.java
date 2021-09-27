@@ -42,8 +42,7 @@ public class CompraAmazon {
     @BeforeMethod
     public void iniciar(){
         // A - Início
-        // Aponta para onde está o driver do Chrome
-        System.setProperty("webdriver.chrome.driver", "drivers/chrome/92/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chrome/92/chromedriver.exe"); // Aponta para onde está o driver do Chrome
         // Instancia o objeto driver como um controlador do Chrome
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);
@@ -60,67 +59,34 @@ public class CompraAmazon {
 
     }
 
-    @Test(priority = 1)
-    public void consultarCursoMantis() throws IOException {
-        String casoDeTeste = "Consultar Curso Mantis";
+    @Test
+    public void consultarProdutoAmazon() throws IOException {
+        String casoDeTeste = "Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster";
         // B - Realizar o teste
         logs.registrarCSV(casoDeTeste,"Iniciou o teste");
-        driver.get("https://www.iterasys.com.br");                              // Abre o site alvo informado
+        driver.get("https://www.amazon.com.br");                              // Abre o site alvo informado
         logs.registrarCSV(casoDeTeste,"Abriu o site");
         evidencias.print(driver, dataHora, casoDeTeste, "Passo 1 - Abriu o site");
 
-        driver.findElement(By.id("searchtext")).click();                        // Clica no campo de pesquisa
+        driver.findElement(By.id("twotabsearchtextbox")).click();                        // Clica no campo de pesquisa
         logs.registrarCSV(casoDeTeste,"Clicou na caixa de pesquisa");
-        driver.findElement(By.id("searchtext")).clear();                        // Limpa o campo de pesquisa
+        driver.findElement(By.id("twotabsearchtextbox")).clear();                        // Limpa o campo de pesquisa
         logs.registrarCSV(casoDeTeste,"Limpou a caixa de pesquisa");
-        driver.findElement(By.id("searchtext")).sendKeys("mantis");  // Escreve "mantis" no campo
-        logs.registrarCSV(casoDeTeste,"Escreveu Mantis na caixa de pesquisa");
+        driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster");  // Escreve o nome do produto no campo de pesquisa
+        logs.registrarCSV(casoDeTeste,"Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster");
 
-        evidencias.print(driver, dataHora, casoDeTeste,"Passo 2 - Digitou Mantis");
-        driver.findElement(By.id("btn_form_search")).click();                   // Clique na lupa
+        evidencias.print(driver, dataHora, casoDeTeste,"Passo 2 - Digitou Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster");
+        driver.findElement(By.id("nav-search-submit-button")).click();                   // Clique na lupa
         logs.registrarCSV(casoDeTeste,"Clicou no botão da Lupa");
 
-        assertEquals(driver.findElement(By.cssSelector("h3")).getText(), "Cursos › \"mantis\"");
-        logs.registrarCSV(casoDeTeste,"Confirmou o texto indicativo da pesquisa do curso Mantis");
-        //assertTrue(driver.findElement(By.cssSelector("h3")).getText().contains("mantis"));
-        //assertEquals(driver.findElement(By.cssSelector("h3:nth-child(1)")).getText(), "Cursos › \"mantis\"");
+        assertEquals(driver.findElement(By.cssSelector("h2")).getText(), "Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster");
+        logs.registrarCSV(casoDeTeste,"Confirmou o texto indicativo da pesquisa do produto");
 
-        evidencias.print(driver, dataHora, casoDeTeste,"Passo 3 - Exibiu a lista de cursos");
-        driver.findElement(By.cssSelector("span.comprar")).click();             // Clica no botão Matricule-se
-        logs.registrarCSV(casoDeTeste,"Clicou no botão Matricule-se");
+        evidencias.print(driver, dataHora, casoDeTeste,"Passo 3 - Exibiu a lista de produtos");
+        driver.findElement(By.cssSelector("span.add-to-cart-button")).click();             // Clica sobre o produto
+        logs.registrarCSV(casoDeTeste,"Clicou na imagem do produto");
 
-        assertEquals(driver.findElement(By.cssSelector("span.item-title")).getText(), "Mantis");
-        logs.registrarCSV(casoDeTeste,"Confirmou o nome do curso Mantis");
-        assertEquals(driver.findElement(By.cssSelector("span.new-price")).getText(), "R$ 49,99");
-        logs.registrarCSV(casoDeTeste,"Confirmou o preço do curso Mantis");
-        evidencias.print(driver, dataHora, casoDeTeste,"Passo 4 - Exibiu o carrinho de compras");
-        logs.registrarCSV(casoDeTeste,"Concluiu o teste");
     }
 
-    @Test(priority = 2, dependsOnMethods = {"consultarCursoMantis"})
-    public void consultarCursoCTFL() throws IOException {
-        String casoDeTeste = "Consultar Curso CTFL";
 
-        // B - Realizar o teste
-        driver.get("https://www.iterasys.com.br");                              // Abre o site alvo informado
-        evidencias.print(driver, dataHora, casoDeTeste,"Passo 1 - Abriu o site");
-
-        driver.findElement(By.id("searchtext")).click();                        // Clica no campo de pesquisa
-        driver.findElement(By.id("searchtext")).clear();                        // Limpa o campo de pesquisa
-        driver.findElement(By.id("searchtext")).sendKeys("preparatório ctfl");  // Escreve "mantis" no campo
-
-        evidencias.print(driver, dataHora, casoDeTeste,"Passo 2 - Digitou preparatorio ctfl");
-        driver.findElement(By.id("btn_form_search")).click();                   // Clique na lupa
-
-        assertEquals(driver.findElement(By.cssSelector("h3")).getText(), "Cursos › \"preparatório ctfl\"");
-        //assertTrue(driver.findElement(By.cssSelector("h3")).getText().contains("mantis"));
-        //assertEquals(driver.findElement(By.cssSelector("h3:nth-child(1)")).getText(), "Cursos › \"mantis\"");
-
-        evidencias.print(driver, dataHora, casoDeTeste,"Passo 3 - Exibiu a lista de cursos");
-        driver.findElement(By.cssSelector("span.comprar")).click();             // Clica no botão Matricule-se
-
-        assertEquals(driver.findElement(By.cssSelector("span.item-title")).getText().toUpperCase(), "PREPARATÓRIO CTFL");
-        assertEquals(driver.findElement(By.cssSelector("span.new-price")).getText(), "R$ 169,00");
-        evidencias.print(driver, dataHora, casoDeTeste,"Passo 4 - Exibiu o carrinho de compras");
-    }
 }
