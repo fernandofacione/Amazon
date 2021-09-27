@@ -1,0 +1,8 @@
+"data e hora","caso de teste","mensagem"
+"[2021/09/26 22:35:47.977]","Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster","Iniciou o teste"
+"[2021/09/26 22:35:50.108]","Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster","Abriu o site"
+"[2021/09/26 22:35:50.484]","Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster","Clicou na caixa de pesquisa"
+"[2021/09/26 22:35:50.526]","Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster","Limpou a caixa de pesquisa"
+"[2021/09/26 22:35:50.635]","Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster","Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster"
+"[2021/09/26 22:35:54.349]","Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster","Clicou no botão da Lupa"
+"[2021/09/26 22:35:54.382]","Consultar Produto Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster","Confirmou o texto indicativo da pesquisa do produto"

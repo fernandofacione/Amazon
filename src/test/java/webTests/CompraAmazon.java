@@ -83,8 +83,12 @@ public class CompraAmazon {
         logs.registrarCSV(casoDeTeste,"Confirmou o texto indicativo da pesquisa do produto");
 
         evidencias.print(driver, dataHora, casoDeTeste,"Passo 3 - Exibiu a lista de produtos");
-        driver.findElement(By.cssSelector("span.add-to-cart-button")).click();             // Clica sobre o produto
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[3]/div[2]/div[2]/div[1]/span[1]/div[1]/div[1]/span[1]/a[1]")).click();
         logs.registrarCSV(casoDeTeste,"Clicou na imagem do produto");
+
+        evidencias.print(driver, dataHora, casoDeTeste,"Passo 4 - Acessou o produto escolhido");
+        driver.findElement(By.id("add-to-cart-button")).click();
+        logs.registrarCSV(casoDeTeste,"Clicou em adicionar ao carrinho");
 
     }
 
