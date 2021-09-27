@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.Assert.assertEquals;
 
 // 3 - Classe
-public class seleniumSimples {
+public class CompraAmazon {
     // 3.1 - Atributos
 
     WebDriver driver;                           // declarar o objeto do Selenium WebDriver
@@ -43,7 +43,7 @@ public class seleniumSimples {
     public void iniciar(){
         // A - Início
         // Aponta para onde está o driver do Chrome
-        System.setProperty("webdriver.chrome.driver", "drivers/chrome/91/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chrome/92/chromedriver.exe");
         // Instancia o objeto driver como um controlador do Chrome
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(60000, TimeUnit.MILLISECONDS);

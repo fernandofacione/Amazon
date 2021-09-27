@@ -14,12 +14,12 @@ public class Home {
     // 1 - Mapeamento
     WebDriver driver;
 
-    @FindBy(id = "searchtext")
-    WebElement caixaDePesquisa; //txtPesquisa
+    @FindBy(id = "twotabsearchtextbox")
+    WebElement caixaPesquisa; //txtPesquisa
     // Similar ao que faziamos antes:
     // driver.findElement(By.id("searchText"))
 
-    @FindBy(id = "btn_form_search")
+    @FindBy(id = "nav-search-submit-button")
     WebElement botaoProcurar; //btnProcurar
 
     // 2 - Construtor
@@ -31,12 +31,12 @@ public class Home {
     }
 
     // 3 - Funções e Métodos
-    public void pesquisarPorCurso(String curso){
-        caixaDePesquisa.click();            // clicar na caixa
-        caixaDePesquisa.clear();            // limpar a caixa
-        caixaDePesquisa.sendKeys(curso);    // escrever na caixa
+    public void pesquisarProduto(String curso){
+        caixaPesquisa.click();            // clicar na caixa
+        caixaPesquisa.clear();            // limpar a caixa
+        caixaPesquisa.sendKeys(curso);    // escrever na caixa
     }
-    public void clicarNaLupa(){
+    public void clicarLupa(){
         botaoProcurar.click();              // clicar no botão
     }
 

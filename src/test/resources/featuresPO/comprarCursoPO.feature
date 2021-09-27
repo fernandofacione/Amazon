@@ -1,8 +1,8 @@
 #language: pt
-Funcionalidade: Comprar Curso PO
-  Cenario: Pesquisar Curso com Clique e Incluir no Carrinho PO
-    Dado que acesso o site da Iterasys  PO
-    Quando pesquiso por "Mantis" PO
+Funcionalidade: Comprar Produto PO
+  Cenario: Pesquisar Produto com Clique e Incluir no Carrinho PO
+    Dado que acesso o site da Amazon  PO
+    Quando pesquiso por "Asus Strix B550-F" PO
     E clico na Lupa PO
     Entao vejo a lista de resultados para o curso "Mantis" PO
     Quando clico em Matricule-se PO
