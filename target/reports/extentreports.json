@@ -12,44 +12,44 @@
         "before": [
           {
             "result": {
-              "duration": 101800,
-              "status": "passed"
-            },
-            "match": {
-              "location": "Hooks.iniciarPO()"
-            }
-          },
-          {
-            "result": {
-              "duration": 2216124300,
+              "duration": 1771332200,
               "status": "passed"
             },
             "match": {
               "location": "comprarProdPO.iniciar()"
             }
+          },
+          {
+            "result": {
+              "duration": 69100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.iniciarPO()"
+            }
           }
         ],
         "line": 3,
-        "name": "Pesquisar produto com Clique e Incluir no Carrinho PO",
+        "name": "Pesquisar Produto com Clique e Incluir no Carrinho PO",
         "description": "",
         "id": "comprar-produto-po;pesquisar-produto-com-clique-e-incluir-no-carrinho-po",
         "after": [
           {
             "result": {
-              "duration": 59600,
+              "duration": 654736600,
               "status": "passed"
             },
             "match": {
-              "location": "Hooks.finalizarPO()"
+              "location": "comprarProdPO.finalizar()"
             }
           },
           {
             "result": {
-              "duration": 646337200,
+              "duration": 60600,
               "status": "passed"
             },
             "match": {
-              "location": "comprarProdutoPO.finalizar()"
+              "location": "Hooks.finalizarPO()"
             }
           }
         ],
@@ -58,19 +58,19 @@
         "steps": [
           {
             "result": {
-              "duration": 3710075600,
+              "duration": 2588998400,
               "status": "passed"
             },
             "line": 4,
             "name": "que acesso o site da Amazon  PO",
             "match": {
-              "location": "comprarProdutoPO.queAcessoOSiteDaAmazonPO()"
+              "location": "comprarProdPO.queAcessoOSiteDaIterasysPO()"
             },
             "keyword": "Dado "
           },
           {
             "result": {
-              "duration": 197749500,
+              "duration": 400709000,
               "status": "passed"
             },
             "line": 5,
@@ -79,7 +79,7 @@
               "arguments": [
                 {
                   "val": "Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster",
-                  "offset": 20
+                  "offset": 14
                 }
               ],
               "location": "comprarProdPO.pesquisoPorProdutoPO(String)"
@@ -88,20 +88,21 @@
           },
           {
             "result": {
-              "duration": 2056832300,
+              "duration": 3645144700,
               "status": "passed"
             },
             "line": 6,
             "name": "clico na Lupa PO",
             "match": {
-              "location": "comprarProdPO.clicoNaLupaPO()"
+              "location": "comprarProdPO.clicoLupaPO()"
             },
             "keyword": "E "
           },
           {
             "result": {
-              "duration": 58381100,
-              "status": "passed"
+              "duration": 6084555900,
+              "error_message": "org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element found by By.cssSelector: h3 to have text \"rodutos › \"Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster\"\". Current text: \"null\" (tried for 5 second(s) with 1 milliseconds interval)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027NANINE\u0027, ip: \u0027192.168.100.80\u0027, os.name: \u0027Windows 10\u0027, os.arch: \u0027amd64\u0027, os.version: \u002710.0\u0027, java.version: \u00271.8.0_291\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 93.0.4577.82, chrome: {chromedriverVersion: 92.0.4515.107 (87a818b10553..., userDataDir: C:\\Users\\ferna\\AppData\\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:58155}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}\nSession ID: 6b1cdca95efecf51a687f280d22540f3\r\n\tat org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)\r\n\tat org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)\r\n\tat PassosPO.comprarProdPO.vejoAListaDeResultadosParaOProdutoPO(comprarProdPO.java:68)\r\n\tat ✽.Entao vejo a lista de resultados para o produto \"Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster\" PO(comprarProdPO.feature:7)\r\n",
+              "status": "failed"
             },
             "line": 7,
             "name": "vejo a lista de resultados para o produto \"Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster\" PO",
@@ -109,7 +110,7 @@
               "arguments": [
                 {
                   "val": "Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster",
-                  "offset": 41
+                  "offset": 43
                 }
               ],
               "location": "comprarProdPO.vejoAListaDeResultadosParaOProdutoPO(String)"
@@ -118,8 +119,7 @@
           },
           {
             "result": {
-              "duration": 2244342700,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 8,
             "name": "clico no Produto PO",
@@ -130,20 +130,30 @@
           },
           {
             "result": {
-              "duration": 127500,
-              "status": "passed"
+              "status": "skipped"
             },
             "line": 9,
-            "name": "confirmo o nome do produto como \"Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster\" e o preco de \"R$ 1.199,00\" PO",
+            "name": "clico em Adicionar ao Carrinho PO",
+            "match": {
+              "location": "comprarProdPO.clicoAdicionarCarrinhoPO()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "confirmo o nome do produto como \"Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster\" e o preco de \"R$ 1199.00\" PO",
             "match": {
               "arguments": [
                 {
                   "val": "Cafeteira Expresso Prima Latte II, Vermelho, 110v, Oster",
-                  "offset": 31
+                  "offset": 33
                 },
                 {
-                  "val": "R$ 1.199,00",
-                  "offset": 53
+                  "val": "R$ 1199.00",
+                  "offset": 105
                 }
               ],
               "location": "comprarProdPO.confirmoONomeDoProdutoComoEOPrecoDePO(String,String)"
@@ -157,6 +167,6 @@
     "description": "",
     "id": "comprar-produto-po",
     "keyword": "Funcionalidade",
-    "uri": "comprarProdutoPO.feature"
+    "uri": "comprarProdPO.feature"
   }
 ]
